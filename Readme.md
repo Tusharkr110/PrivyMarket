@@ -1,57 +1,118 @@
-# Sample Hardhat 3 Project (`node:test` and `viem`)
+# PrivyMarket
 
-This project showcases a Hardhat 3 project using the native Node.js test runner (`node:test`) and the `viem` library for Ethereum interactions.
+**A blockchain-based, privacy-preserving data-sharing and rewards platform.**
 
-To learn more about Hardhat 3, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3](https://hardhat.org/hardhat3-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+PrivyMarket aims to enable secure data authorization, transparent reward mechanisms, and privacy-aware data sharing. The project explores how blockchain technology can support controlled access to personal data while protecting user privacy.
 
-## Project Overview
+> **Development status:** Early development. The repository currently contains the initial project structure and Hardhat starter code. PrivyMarket-specific functionality is not yet implemented.
 
-This example project includes:
+## Project Structure
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using [`node:test`](nodejs.org/api/test.html), the new Node.js native test runner, and [`viem`](https://viem.sh/).
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+```text
+PrivyMarket/
+├── backend/       # Backend services and APIs
+├── bench/         # Performance benchmarks
+├── contracts/     # Solidity smart contracts and tests
+├── docs/          # Documentation and learning notes
+├── firmware/      # Device firmware
+├── web/            # Frontend application
+├── zk/             # Zero-knowledge proof components
+├── ignition/       # Hardhat deployment modules
+├── scripts/        # Development and transaction scripts
+├── test/           # Automated tests
+├── .gitignore      # Git exclusions
+├── hardhat.config.ts
+├── package.json
+├── package-lock.json
+└── tsconfig.json
+```
 
-## Usage
+## Technology Stack
 
-### Running Tests
+- **Blockchain:** Solidity, Hardhat 3
+- **Development:** Node.js, npm, TypeScript
+- **Ethereum interaction:** Viem
+- **Version control:** Git and GitHub
 
-To run all the tests in the project, execute the following command:
+Additional technologies will be introduced as the project develops.
 
-```shell
+## Current Progress
+
+- [x] GitHub repository created
+- [x] Initial project folder structure created
+- [x] Hardhat development environment initialized
+- [x] Starter test suite executed successfully
+- [ ] Blockchain fundamentals documented
+- [ ] PrivyMarket smart contracts implemented
+- [ ] Backend APIs implemented
+- [ ] Frontend application developed
+- [ ] Privacy and zero-knowledge components explored
+- [ ] Application integration and end-to-end testing
+
+## Starter Contracts
+
+The following files are currently included for development environment verification:
+
+- `contracts/Counter.sol` — Example Solidity counter contract.
+- `contracts/Counter.t.sol` — Example Solidity tests.
+
+These are temporary Hardhat starter examples, not the actual PrivyMarket implementation. They are retained until project-specific contracts are developed.
+
+## Getting Started
+
+### Prerequisites
+
+Install Node.js and npm, then verify your installation:
+
+```bash
+node --version
+npm --version
+git --version
+```
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Tusharkr110/PrivyMarket.git
+cd PrivyMarket
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Verify Hardhat
+
+```bash
+npx hardhat --version
+```
+
+### 4. Run the tests
+
+```bash
 npx hardhat test
 ```
 
-You can also selectively run the Solidity or `node:test` tests:
+The current starter tests verify the example contract and its associated functionality. Passing these tests does not yet validate PrivyMarket-specific features.
 
-```shell
-npx hardhat test solidity
-npx hardhat test nodejs
-```
+## Development Guidelines
 
-### Make a deployment to Sepolia
+- Keep project-specific code organized in its corresponding directory.
+- Write tests for smart contracts before integrating them with the application.
+- Never commit private keys, wallet seed phrases, API secrets, or populated environment files.
+- Keep dependencies reproducible through `package-lock.json`.
+- Document significant changes and learning progress in `docs/`.
+- Verify tests before committing changes.
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+## Learning Log
 
-To run the deployment to a local chain:
+| Day | Activity | Status |
+|---|---|---|
+| Day 1 | Repository setup and Hardhat initialization | Complete |
+| Day 2 | Blockchain fundamentals and documentation | Pending |
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
+## License
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
-```
+No license has been specified yet. Licensing will be decided as the project develops.
