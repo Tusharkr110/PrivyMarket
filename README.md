@@ -30,8 +30,8 @@ PrivyMarket/
 ## Technology Stack
 
 - **Blockchain:** Solidity, Hardhat 3
-- **Development:** Node.js, npm, TypeScript
-- **Ethereum interaction:** Viem
+- **Development:** Node.js 22.13 or later, npm, TypeScript
+- **Ethereum interaction:** ethers v6
 - **Version control:** Git and GitHub
 
 Additional technologies will be introduced as the project develops.
